@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AlbumStorePage } from '../../../e2e/app.po';
 
-import {Album} from '../album';
-
 import {ProductService} from '../product.service';
+
+import {Album} from '../album';
 @Component({
   selector: 'app-product-tracklisting',
   templateUrl: './product-tracklisting.component.html',
@@ -11,12 +11,12 @@ import {ProductService} from '../product.service';
 })
 export class ProductTracklistingComponent implements OnInit {
 
-  constructor(_productService) { }
+  albumInfo: Album;
+  constructor(private _productService:ProductService) { }
 
   ngOnInit() {
-    this._productService.getAlbum(1)
+    this._productService.getAlbum(1).subscribe(response=>this.albumInfo=response);
   }
 
 }
 
-albumInfo: Album;
