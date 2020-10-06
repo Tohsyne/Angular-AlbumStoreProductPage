@@ -1,4 +1,4 @@
-import { AlbumStorePage } from './app.po';
+vimport { AlbumStorePage } from './app.po';
 
 describe('album-store App', () => {
   let page: AlbumStorePage;
